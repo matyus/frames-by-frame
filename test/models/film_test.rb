@@ -13,6 +13,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  size             :string
+#  length           :string
 #
 
 require 'test_helper'

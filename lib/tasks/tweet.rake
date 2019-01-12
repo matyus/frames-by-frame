@@ -5,6 +5,8 @@ namespace :tweet do
   task next: :environment do
     film = Film.find(1)
 
+    return if film.timestamp == film.length
+
     film.increment!
 
     command = `ffmpeg -ss #{film.timestamp} -i public/#{film.source_file} -s #{film.size} -an -vframes 1 tmp/snapshots/#{film.source_file}-#{film.timestamp}-%05d.jpg`

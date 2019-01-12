@@ -13,5 +13,6 @@ Film.create(
   hours: 0,
   minutes: 0,
   seconds: 0,
-  milliseconds: 0
+  milliseconds: 0,
+  length: '01:32:00.0000'
 )
