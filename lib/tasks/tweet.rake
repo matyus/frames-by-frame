@@ -3,7 +3,6 @@ require './lib/twitter_client.rb'
 namespace :tweet do
   desc "TODO"
   task update: :environment do
-    #require './lib/tweet'
     film = Film.find(1)
 
     film.increment!
@@ -12,15 +11,8 @@ namespace :tweet do
 
     api = TwitterClient.build
 
-    status = nil
-
     file = File.open("./tmp/snapshots/Driller-killer_512kb_subtitles.mp4-#{film.timestamp}-00001.jpg")
-    options = {}
 
-    api.update_with_media(status, file, options)
-
-
-
+    api.update_with_media(nil, file, {})
   end
-
 end
