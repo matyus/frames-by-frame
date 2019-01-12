@@ -8,17 +8,12 @@ namespace :tweet do
 
     film.increment!
 
-    clean_directory = `make clean`
-
-    create_image = `make FILE=Driller-killer_512kb_subtitles.mp4 SIZE=480x360 TIME=#{film.timestamp} seek`
-
-    puts "----------"
-
-    puts create_image
+    command = `ffmpeg -ss #{film.timestamp} -i public/#{film.source_file} -s #{film.size} -an -vframes 1 tmp/snapshots/#{film.source_file}-#{film.timestamp}-%05d.jpg`
 
     api = TwitterClient.build
 
     status = nil
+
     file = File.open("./tmp/snapshots/Driller-killer_512kb_subtitles.mp4-#{film.timestamp}-00001.jpg")
     options = {}
 

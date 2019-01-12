@@ -8,6 +8,8 @@
 Film.create(
   title: 'The Driller Killer',
   source_file: 'Driller-killer_subtitles.mp4',
+  filename: 'Driller-killer_512kb_subtitles.mp4',
+  size: '416x240',
   output_directory: 'build',
   hours: 0,
   minutes: 0,
