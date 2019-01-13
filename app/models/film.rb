@@ -26,7 +26,7 @@ class Film < ApplicationRecord
       self.seconds += 1
       self.milliseconds = 0
     else
-      self.milliseconds += 30
+      self.milliseconds += 60
     end
 
     if self.seconds >= 59
