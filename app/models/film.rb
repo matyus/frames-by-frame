@@ -22,11 +22,11 @@ class Film < ApplicationRecord
   end
 
   def increment
-    if self.milliseconds >= 990
+    if self.milliseconds >= 9000
       self.seconds += 1
       self.milliseconds = 0
     else
-      self.milliseconds += 60
+      self.milliseconds += 1000
     end
 
     if self.seconds >= 59

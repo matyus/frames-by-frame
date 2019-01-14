@@ -37,8 +37,8 @@ class FilmTest < ActiveSupport::TestCase
     assert_equal film.hours, 0
     assert_equal film.minutes, 0
     assert_equal film.seconds, 0
-    assert_equal film.milliseconds, 60
-    assert_equal film.timestamp, "00:00:00.0060"
+    assert_equal film.milliseconds, 1000
+    assert_equal film.timestamp, "00:00:00.1000"
   end
 
   test "increment into first second" do
@@ -58,7 +58,7 @@ class FilmTest < ActiveSupport::TestCase
       hours: 0,
       minutes: 0,
       seconds: 1,
-      milliseconds: 300
+      milliseconds: 3000
     )
 
     film.increment
@@ -66,8 +66,8 @@ class FilmTest < ActiveSupport::TestCase
     assert_equal film.hours, 0
     assert_equal film.minutes, 0
     assert_equal film.seconds, 1
-    assert_equal film.milliseconds, 360
-    assert_equal film.timestamp, "00:00:01.0360"
+    assert_equal film.milliseconds, 4000
+    assert_equal film.timestamp, "00:00:01.4000"
   end
 
   test "increment into second second" do
@@ -75,7 +75,7 @@ class FilmTest < ActiveSupport::TestCase
       hours: 0,
       minutes: 0,
       seconds: 1,
-      milliseconds: 990
+      milliseconds: 9000
     )
 
     film.increment
@@ -104,7 +104,7 @@ class FilmTest < ActiveSupport::TestCase
       hours: 0,
       minutes: 1,
       seconds: 30,
-      milliseconds: 990
+      milliseconds: 9000
     )
 
     film.increment
@@ -150,7 +150,7 @@ class FilmTest < ActiveSupport::TestCase
       hours: 1,
       minutes: 31,
       seconds: 59,
-      milliseconds: 990
+      milliseconds: 9000
     )
 
     film.increment
@@ -167,7 +167,7 @@ class FilmTest < ActiveSupport::TestCase
       hours: 1,
       minutes: 59,
       seconds: 59,
-      milliseconds: 990
+      milliseconds: 9000
     )
 
     film.increment

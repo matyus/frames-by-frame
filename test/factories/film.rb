@@ -10,7 +10,7 @@ FactoryBot.define do
       hours { 0 }
       minutes { 0 }
       seconds { 0 }
-      milliseconds { 990 }
+      milliseconds { 9000 }
     end
 
     trait :last_second do
